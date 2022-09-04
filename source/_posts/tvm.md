@@ -6,3 +6,5 @@ tags: tvm
 
 
 this is a placeholder for tvm
+下面测试以下图片捏
+![](/images/logo.webp)
