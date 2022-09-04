@@ -1,7 +1,7 @@
 # Blog config
 keywords: Blog,博客,Hexo
-author: Yourname
-description: A simple and beautiful blog
+author: lin
+description: this is my blog. love furry 捏
 
 # icon
 # If the is size is incorrect, please edit /source.css/style.styl
@@ -11,7 +11,7 @@ logo_dir: /images/logo@2x.webp
 logo_style: width:220px;
 
 copyright:
-  show: true
+  show: false
   default: "本文采用CC-BY-SA-3.0协议，转载请注明出处"
   show_author: true
 
@@ -24,7 +24,7 @@ copyright:
 
 footbar:
   # Copyright
-  copyright: 全站CC-BY-SA-3.0
+#copyright: 全站CC-BY-SA-3.0
   # 对于中国用户，如果你有网站备案：
   beian: 
   gongan: 
@@ -32,10 +32,9 @@ footbar:
 
 # Social Links
 # If you want to add more, go to sidebar.pug
-github: https://github.com/Lhcfl
-mail: yourname@example.com
-zhihu: https://zhihu.com/people/jin-xin-4-68
-QQ: 
+mail: 275911105@qq.com
+zhihu:
+QQ: 275911105
 twitter:
 instagram:
 rss:
