@@ -67,11 +67,11 @@ for（const auto &p:m){...}
 ~~~
 当然了，auto也是得看实际的使用场景，大多数情况下使用得当能提升我们编程的效率的
 条款6 介绍的是使用auto可能遇到的坑，在这种时候就得采用传统的方式了
-第1个，就是vector<bool>这个和其他vector格格不入的对象，对于一般的vector<T>[],他能返回一个T&类型的东西，但vector<bool>他本身是特化过的，他底层是使用比特去表示这1个1个的bool，而c++又不能返回1个对比特的引用，所以他只能返回一个用来模拟bool&的reference，即std::vector<bool>::reference,他能够像bool进行隐式转换，所以对下面语句
+第1个，就是vector\<bool>这个和其他vector格格不入的对象，对于一般的vector\<T>[],他能返回一个T&类型的东西，但vector\<bool>他本身是特化过的，他底层是使用比特去表示这1个1个的bool，而c++又不能返回1个对比特的引用，所以他只能返回一个用来模拟bool&的reference，即std::vector\<bool>::reference,他能够像bool进行隐式转换，所以对下面语句
 ~~~
-vector<bool> vec{true,true};
+vector\<bool> vec{true,true};
 bool is_true = vec[0];
 ~~~
-这里取出来的vec[0]实际是个std::vector<bool>::reference，但他可以转换为bool，所以没啥问题
+这里取出来的vec[0]实际是个std::vector\<bool>::reference，但他可以转换为bool，所以没啥问题
 但假如我们使用auto去声明is_true,得到他类型就是std::vector<bool>::reference了，他就不是指代第1个元素是否为true的变量了
 书里介绍的这种情况带来的问题在于可能出现悬空指针，例如，当我们函数的返回值是个vector<bool>时，他是个临时对象，而他实现获取第1个元素的方式，有一种实现是通过指针+偏移量的方式去获取，而我们如果使用auto is_true = bool_vectroy()[0]时，is_true和临时对象的指针指向同一个东西，而临时对象在这一句话后就解析了，那is_true就指向1个被析构了的地址了，
